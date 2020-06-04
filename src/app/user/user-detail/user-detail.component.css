@@ -1,0 +1,9 @@
+.custom-box {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 20px;
+  min-height: 200px;
+}
+
+.custom-box .text-secondary {
+  font-size: 14px;
+}

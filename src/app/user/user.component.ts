@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { Router } from '@angular/router';
 
 import { RestApiService } from '../rest-api.service';
 import { User } from './user.model';
@@ -11,12 +12,16 @@ import { User } from './user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  Data: User[];
-  col: string[] = ['id', 'name', 'email', 'website'];
-  dataSource = new MatTableDataSource<User>(this.Data);
+  user: User[];
+  col: string[] = ['id', 'name', 'city', 'website'];
+  dataSource = new MatTableDataSource<User>(this.user);
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
-  constructor(private restApiService: RestApiService) {
+  constructor(
+    private restApiService: RestApiService,
+    private router: Router) {}
+
+  ngOnInit(): void {
     this.restApiService.getUsers().subscribe((res) => {
       this.dataSource = new MatTableDataSource<User>(res);
       setTimeout(() => {
@@ -25,6 +30,7 @@ export class UserComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
+  onUserClick(id: number) {
+    this.router.navigate(['../users', id]);
   }
 }

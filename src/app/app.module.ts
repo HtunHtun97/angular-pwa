@@ -11,11 +11,17 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RestApiService } from './rest-api.service';
 import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from './header/header.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserComponent
+    UserComponent,
+    HomeComponent,
+    HeaderComponent,
+    UserDetailComponent,
   ],
   imports: [
     BrowserModule,

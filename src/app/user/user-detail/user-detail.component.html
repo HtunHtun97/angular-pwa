@@ -1,0 +1,54 @@
+<div *ngIf="user">
+  <span class="display-4">
+    {{user.name}}
+    <p class="lead">{{'(' + user.username + ')'}}</p>
+  </span>
+  <h4>Info</h4>
+  <div class="d-flex flex-row flex-wrap justify-content-between custom-box mb-3">
+    <div class="flex-column">
+      <div class="text-dark">Phone</div>
+      <div class="text-secondary">{{user.phone}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">Website</div>
+      <div class="text-secondary">{{user.website}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">Email</div>
+      <div class="text-secondary">{{user.email}}</div>
+    </div>
+  </div>
+  <h4>Address</h4>
+  <div class="d-flex flex-row flex-wrap justify-content-between custom-box mb-3">
+    <div class="flex-column">
+      <div class="text-dark">Street</div>
+      <div class="text-secondary">{{user.address.street}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">City</div>
+      <div class="text-secondary">{{user.address.city}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">Zip Code</div>
+      <div class="text-secondary">{{user.address.zipcode}}</div>
+    </div>
+  </div>
+  <h4>Company</h4>
+  <div class="d-flex flex-row flex-wrap justify-content-between custom-box mb-3">
+    <div class="flex-column">
+      <div class="text-dark">Name</div>
+      <div class="text-secondary">{{user.company.name}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">Description</div>
+      <div class="text-secondary">{{user.company.catchPhrase}}</div>
+    </div>
+    <div class="flex-column">
+      <div class="text-dark">Business</div>
+      <div class="text-secondary">{{user.company.bs}}</div>
+    </div>
+  </div>
+  <button
+    (click)="goToList()"
+    class="btn btn-primary mb-3">Back</button>
+</div>
