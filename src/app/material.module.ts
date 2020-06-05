@@ -4,16 +4,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
-    imports: [
-        MatTableModule,
-        MatPaginatorModule,
-        MatToolbarModule
-    ],
-    exports: [
-        MatTableModule,
-        MatPaginatorModule,
-        MatToolbarModule
-    ]
+  imports: [MatTableModule, MatPaginatorModule, MatToolbarModule],
+  exports: [MatTableModule, MatPaginatorModule, MatToolbarModule],
 })
-
-export class MaterialModule { }
+export class MaterialModule {}

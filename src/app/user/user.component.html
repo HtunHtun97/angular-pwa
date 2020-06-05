@@ -17,10 +17,6 @@
       <mat-cell *matCellDef="let element">{{element.website}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="col"></mat-header-row>
-    <mat-row 
-      *matRowDef="let row; columns: col;"
-      class="element-row"
-      (click)="onUserClick(row.id)"></mat-row>
+    <mat-row *matRowDef="let row; columns: col;" class="element-row" (click)="onUserClick(row.id)"></mat-row>
   </mat-table>
-  <mat-paginator [pageSizeOptions]="[7, 14, 28]" showFirstLastButtons></mat-paginator>
 </div>
