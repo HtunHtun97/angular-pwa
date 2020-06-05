@@ -12,6 +12,7 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     UserDetailComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     NoopAnimationsModule,
     MaterialModule,
@@ -30,6 +31,7 @@ import { UserDetailComponent } from './user/user-detail/user-detail.component';
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
     }),
+    RouterModule,
   ],
   providers: [RestApiService],
   bootstrap: [AppComponent],
